@@ -79,6 +79,10 @@ class payment(View):
     if request.session.has_key('logged'):
       response=requests.get(f"http://127.0.0.1:8000/course/{id}").json()
       return render(request,"mytem/payment.html",{'course':response})
-    return redirect("/login")
+    return redirect("login_game")
    def post(self,request,id):
-      pass
+      if request.session.has_key('logged'):
+         data={"name":request.POST['name'],"email":request.POST['email'],"contact":request.POST['contact'],"Course_name":request.POST['Course_name']}
+         response=requests.post("http://127.0.0.1:8000/payment/",data=data).json()
+         return render(request,"mytem/test.html",{'payment':response})
+      # return redirect('login_game')

@@ -36,11 +36,12 @@
                                         <input type="payment" name="payment" class="form-control"
                                             value="{{j.Course_price}}"
                                             aria-describedby="helpId" readonly >
+                                            <input type="hidden"  name="Course_name" value="{{j.Course_PName}}">
                                     </div>
 
                                 </div>
                             </div>
-                            <button class="btn-primary h4 rounded">Payment Now</button>
+                            <button class="btn-primary h4 rounded" type="submit">Payment Now</button>
                             <!-- <script src="https://checkout.razorpay.com/v1/checkout.js" class="btn-primary" data-key="rzp_live_7euwNePnomy6IE"
                                 data-amount="{{j.price}}00" data-buttontext="Payment Now"
                                 data-name="shiva concept digital" data-description="Payment" data-prefill.name="" data-prefill.email=""
